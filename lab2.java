@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.Arrays;
  
-public class Lab2 {
+public class lab2 {
     public static void main(String[] args) {
  
         // Lab 4 – COMP1008 Programming Fundamentals
         // Topic: Arrays & ArrayLists
         // Name: Avi Patel
- 
+        //Student ID: 200627226
         // ================================================
         // STEP 1: Create an array of grocery items (String)
         // Add at least 6 items to the array
@@ -18,8 +18,8 @@ public class Lab2 {
                  "Eggs",
                  "Bread",
                  "Apples",
-                "Onions",
-                "Rice"
+                 "Onions",
+                 "Rice"
         };
 
         // ================================================
@@ -77,6 +77,7 @@ public class Lab2 {
         // ================================================
         // STEP 6: Print the final results
         // ================================================
+        System.out.println("Items starting with a vowel: " + vowelCount);
         
  
     }
