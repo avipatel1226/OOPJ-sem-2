@@ -1,16 +1,21 @@
-// LibraryManager.java
-// Main program for Library Book Management System
+/**
+ * Assignment 1 - Library Book Management System
+ * Student: Avi Patel
+ * Student ID: 200627226
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LibraryManager {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Book> library = new ArrayList<>();
+        ArrayList<Book> library = new ArrayList<>(); // Stores all Book objects
         int choice;
 
         do {
-            // Menu
+            // Display menu
             System.out.println("\n=== Library Book Management System ===");
             System.out.println("1. Add a new book");
             System.out.println("2. Display all books");
@@ -20,7 +25,8 @@ public class LibraryManager {
             System.out.println("6. Return a book");
             System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
-            
+
+            // Input validation for menu choice
             while (!scanner.hasNextInt()) {
                 System.out.print("Please enter a number between 1-7: ");
                 scanner.next();
@@ -43,11 +49,11 @@ public class LibraryManager {
                     break;
 
                 case 2:
-                    // Display all books (sorted by title)
+                    // Display all books, sorted by title
                     if(library.isEmpty()) {
                         System.out.println("No books in the library.");
                     } else {
-                        library.sort((b1, b2) -> b1.getTitle().compareToIgnoreCase(b2.getTitle())); // optional sorting
+                        library.sort((b1, b2) -> b1.getTitle().compareToIgnoreCase(b2.getTitle())); // Optional sorting
                         int availableCount = 0;
                         int checkedOutCount = 0;
                         for(Book book : library) {
@@ -61,7 +67,7 @@ public class LibraryManager {
                     break;
 
                 case 3:
-                    // Display available books only
+                    // Display only available books
                     boolean anyAvailable = false;
                     for(Book book : library) {
                         if(book.isAvailable()) {
@@ -87,7 +93,7 @@ public class LibraryManager {
                     break;
 
                 case 5:
-                    // Check out a book
+                    // Check out a book by ISBN
                     System.out.print("Enter ISBN of book to check out: ");
                     String checkoutIsbn = scanner.nextLine();
                     boolean checkedOut = false;
@@ -105,8 +111,9 @@ public class LibraryManager {
                     }
                     if(!checkedOut) System.out.println("Book not found.");
                     break;
- case 6:
-                    // Return a book
+
+                case 6:
+                    // Return a book by ISBN
                     System.out.print("Enter ISBN of book to return: ");
                     String returnIsbn = scanner.nextLine();
                     boolean returned = false;
@@ -124,7 +131,9 @@ public class LibraryManager {
                     }
                     if(!returned) System.out.println("Book not found.");
                     break;
+
                 case 7:
+                    // Exit program
                     System.out.println("Exiting... Goodbye!");
                     break;
 
@@ -132,8 +141,8 @@ public class LibraryManager {
                     System.out.println("Invalid choice. Try again.");
             }
 
-        } while(choice != 7);
+        } while(choice != 7); // Repeat until user chooses to exit
 
-        scanner.close();
+        scanner.close(); // Close scanner resource
     }
 }
