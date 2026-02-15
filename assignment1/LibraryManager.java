@@ -105,37 +105,3 @@ public class LibraryManager {
                     }
                     if(!checkedOut) System.out.println("Book not found.");
                     break;
-
-                case 6:
-                    // Return a book
-                    System.out.print("Enter ISBN of book to return: ");
-                    String returnIsbn = scanner.nextLine();
-                    boolean returned = false;
-                    for(Book book : library) {
-                        if(book.getIsbn().equals(returnIsbn)) {
-                            if(!book.isAvailable()) {
-                                book.setAvailable(true);
-                                System.out.println("Book returned successfully!");
-                            } else {
-                                System.out.println("Book is already available.");
-                            }
-                            returned = true;
-                            break;
-                        }
-                    }
-                    if(!returned) System.out.println("Book not found.");
-                    break;
-
-                case 7:
-                    System.out.println("Exiting... Goodbye!");
-                    break;
-
-                default:
-                    System.out.println("Invalid choice. Try again.");
-            }
-
-        } while(choice != 7);
-
-        scanner.close();
-    }
-}
