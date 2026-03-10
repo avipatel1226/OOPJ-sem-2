@@ -50,9 +50,16 @@ public class StudentValidatorLab {
 
         // STEP 5:
         // Ask user to enter email
+        System.out.print("Enter email: ");
+        String email = scanner.nextLine();
 
         // STEP 6:
         // Validate email format
+        if (email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
+            System.out.println("Valid email");
+        } else {
+            System.out.println("Invalid email");
+        }
 
         // =====================================================
         // PART 4 — SENTENCE PROCESSING
