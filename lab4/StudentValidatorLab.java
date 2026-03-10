@@ -67,15 +67,29 @@ public class StudentValidatorLab {
 
         // STEP 7:
         // Ask user to enter a sentence
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine();
 
         // STEP 8:
         // Count vowels using Character class
+        int vowelCount = 0;
+        for (int i = 0; i < sentence.length(); i++) {
+            char ch = Character.toLowerCase(sentence.charAt(i));
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowelCount++;
+            }
+        }
+        System.out.println("Vowel count: " + vowelCount);
 
         // STEP 9:
         // Reverse sentence using StringBuilder
+        String reversed = new StringBuilder(sentence).reverse().toString();
+        System.out.println("Reversed sentence: " + reversed);
 
         // STEP 10:
         // Replace all digits in sentence with '*'
+        String replaced = sentence.replaceAll("\\d", "*");
+        System.out.println("Digits replaced: " + replaced);
 
         // =====================================================
         // PART 5 — TOKENIZING
