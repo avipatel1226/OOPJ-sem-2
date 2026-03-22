@@ -16,9 +16,11 @@ public class CalculatorApp extends Application {
         // Step 1: Create TextFields for input
         TextField input1 = new TextField();
         input1.setPromptText("Enter first number");
+        input1.setPrefWidth(200); // UI polish
 
         TextField input2 = new TextField();
         input2.setPromptText("Enter second number");
+        input2.setPrefWidth(200); // UI polish
 
         // Step 2: Create Buttons for operations
         Button addBtn = new Button("+");
@@ -30,12 +32,13 @@ public class CalculatorApp extends Application {
         Label resultLabel = new Label("Result: ");
 
         // Step 4: HBox for buttons
-        HBox buttonBox = new HBox(10);
+        HBox buttonBox = new HBox(15); // increased spacing for polish
         buttonBox.getChildren().addAll(addBtn, subBtn, mulBtn, divBtn);
 
         // Step 5: VBox main layout
-        VBox root = new VBox(10);
+        VBox root = new VBox(15); // spacing between elements
         root.getChildren().addAll(input1, input2, buttonBox, resultLabel);
+        root.setStyle("-fx-padding: 20; -fx-alignment: center;"); // padding + center alignment
 
         // Step 6: Event handling for buttons
         addBtn.setOnAction(e -> {
@@ -84,7 +87,7 @@ public class CalculatorApp extends Application {
         });
 
         // Step 7: Create scene and show stage
-        Scene scene = new Scene(root, 300, 200);
+        Scene scene = new Scene(root, 300, 250); // slightly taller for spacing
         primaryStage.setTitle("Simple Calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
