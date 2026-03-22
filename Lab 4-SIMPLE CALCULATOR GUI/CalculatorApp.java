@@ -21,16 +21,21 @@ public class CalculatorApp extends Application {
         input2.setPromptText("Enter second number");
  
         // Step 2: Create Buttons for operations
-        
+        Button addBtn = new Button("+");
+        Button subBtn = new Button("-");
+        Button mulBtn = new Button("*");
+        Button divBtn = new Button("/");
  
         // Step 3: Create Label for result
         Label resultLabel = new Label("Result: ");
        
         // Step 4: HBox for buttons
+        HBox buttonBox = new HBox(10);
+        buttonBox.getChildren().addAll(addBtn, subBtn, mulBtn, divBtn);
        
         // Step 5: VBox main layout
         VBox root = new VBox(10);
-        root.getChildren().addAll(input1, input2, resultLabel);
+        root.getChildren().addAll(input1, input2, buttonBox, resultLabel);
        
         // Step 6: Event handling for buttons
        
